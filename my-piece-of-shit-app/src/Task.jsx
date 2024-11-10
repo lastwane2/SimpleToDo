@@ -2,7 +2,8 @@ import {useState} from "react";
 
 export const Task = (props) => {
     const [isTaskChanging, setIsTaskChanging] = useState(false)
-    const [newInputValue, setNewInputValue] = useState('')
+    const [newInputValue, setNewInputValue] = useState(`${props.taskText}`)
+
 
     const renderTaskChanger = () => {
         return isTaskChanging ? (

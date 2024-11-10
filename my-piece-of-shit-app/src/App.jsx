@@ -14,6 +14,7 @@ function App() {
                     tasks={tasks}
                     setTasks={setTasks}
                     idx={index}
+                    key={task}
                 />
             </div>
         )
@@ -24,7 +25,7 @@ function App() {
             <input onChange={(e) => setInputValue(e.target.value)} value={inputValue}/>
             <button onClick={() => setTasks([...tasks, inputValue])}>Добавить задачу</button>
             <div>
-                {tasks.map((task, index) => renderTask(task, index))}
+                {tasks.map(renderTask)}
             </div>
         </>
     )
