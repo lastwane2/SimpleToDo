@@ -21,7 +21,7 @@ export const Task = (props) => {
 
     const handleChangeClick = () => {
         if (isTaskChanging) {
-            const tasksCopy = props.tasks.map((task, index) => index === props.idx ? task = newInputValue : task)
+            const tasksCopy = props.tasks.map((task, index) => index === props.idx ? {...task, taskValue : newInputValue} : task)
             props.setTasks(tasksCopy)
             setIsTaskChanging(false)
         } else {

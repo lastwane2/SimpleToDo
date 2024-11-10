@@ -8,13 +8,13 @@ function App() {
 
     const renderTask = (task, index) => {
         return (
-            <div>
+            <div key={crypto.randomUUID()}>
                 <Task
-                    taskText={task}
+                    taskText={task.taskValue}
                     tasks={tasks}
                     setTasks={setTasks}
                     idx={index}
-                    key={task}
+                    key={task.id}
                 />
             </div>
         )
@@ -23,7 +23,7 @@ function App() {
     return (
         <>
             <input onChange={(e) => setInputValue(e.target.value)} value={inputValue}/>
-            <button onClick={() => setTasks([...tasks, inputValue])}>Добавить задачу</button>
+            <button onClick={() => setTasks([...tasks, {id : crypto.randomUUID(), taskValue : inputValue}])}>Добавить задачу</button>
             <div>
                 {tasks.map(renderTask)}
             </div>
