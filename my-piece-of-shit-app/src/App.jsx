@@ -8,7 +8,6 @@ function App() {
 
     const renderTask = (task, index) => {
         return (
-            <div key={crypto.randomUUID()}>
                 <Task
                     taskText={task.taskValue}
                     tasks={tasks}
@@ -16,7 +15,6 @@ function App() {
                     idx={index}
                     key={task.id}
                 />
-            </div>
         )
     }
 
